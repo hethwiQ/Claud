@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>ProjectClima</title>
+  <link rel="icon" type="image/png" href="/images/test.png"> <!-- Add this line for the logo -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const body = document.body;
+      const darkModeToggle = document.querySelector("#dark-mode-toggle");
+
+      darkModeToggle.addEventListener("click", function() {
+        body.classList.toggle("dark-mode");
+      });
+    });
+  </script>
+
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+        background-color: #AFDBF5;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-image: url('https://raw.githubusercontent.com/TheBlankPagesHosting/Home/main/images/earth.png');
+        background-size: cover
+    }
+    .container {
+      position: relative;
+      background: rgba(255, 255, 255, 0.523); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      backdrop-filter: blur(5px); /* Apply blur effect */
+      
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    label {
+      font-weight: 500;
+      font-size: 16px;
+    }
+    input[type="text"] {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 16px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    button {
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 16px;
+      padding: 8px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="container" style="">
+  <h1>Welcome to Clima!</h1>
+  <h5 style="font-style: italic">Simple Forecast generator</h5>
+  <form action="/weather" method="get">
+    <label for="city"></label>
+    <input type="text" id="city" name="city" required placeholder="Enter a city name">
+    <button type="submit">Get Weather</button>
+  </form>
+</div>
+<!---  Project Clima By T#eBl@nkPages!   --->
+</body>
+</html>

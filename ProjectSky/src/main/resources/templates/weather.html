@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ProjectClaud</title>
+    <link rel="icon" type="image/png" href="/images/test.png"> <!-- Add this line for the logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const body = document.body;
+            const darkModeToggle = document.querySelector("#dark-mode-toggle");
+
+            darkModeToggle.addEventListener("click", function() {
+                body.classList.toggle("dark-mode");
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #AFDBF5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url('https://raw.githubusercontent.com/TheBlankPagesHosting/Home/main/images/earth.png');
+            background-size:cover
+        }
+        .container {
+            position: relative;
+      background: rgba(255, 255, 255, 0.523); /* Semi-transparent background */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      backdrop-filter: blur(5px); /* Apply blur effect */
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        a {
+            color: #4da6ff; /* Light blue link color */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+
+        }
+        .forecast-box {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.492);
+            backdrop-filter: blur(5px);
+        }
+
+        .forecast-day {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            position: relative;
+            background: rgba(255, 255, 255, 0);
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        .forecast-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1>Forecast from <span th:text="${cityName}"></span></h1> <!---
+    <p><strong>Temperature:</strong> <span th:text="${currentTemperature}"></span>°C</p>
+    <p><strong>Description:</strong> <span th:text="${weatherDescription}"></span></p>  ----->
+
+    <div class="forecast-box">
+        <a href="/" style="font-weight: 500;">Back to Search ⬅️</a>
+        <div class="forecast-day">
+            <p class="forecast-title">Today's Forecast</p>
+            <p><strong>Date:</strong> <span th:text="${forecastEntries[0].date}"></span></p>
+            <p><strong>Temperature:</strong> <span th:text="${forecastEntries[0].temperature}"></span>°C</p>
+            <p><strong>Description:</strong> <span th:text="${forecastEntries[0].weatherDescription}"></span></p>
+        </div>
+        <div class="forecast-day">
+            <p class="forecast-title">Tomorrow's Forecast</p>
+            <p><strong>Date:</strong> <span th:text="${forecastEntries[1].date}"></span></p>
+            <p><strong>Temperature:</strong> <span th:text="${forecastEntries[1].temperature}"></span>°C</p>
+            <p><strong>Description:</strong> <span th:text="${forecastEntries[1].weatherDescription}"></span></p>
+        </div>
+        <div class="forecast-day">
+            <p class="forecast-title">Day After Tomorrow's Forecast</p>
+            <p><strong>Date:</strong> <span th:text="${forecastEntries[2].date}"></span></p>
+            <p><strong>Temperature:</strong> <span th:text="${forecastEntries[2].temperature}"></span>°C</p>
+            <p><strong>Description:</strong> <span th:text="${forecastEntries[2].weatherDescription}"></span></p>
+        </div>
+    </div>
+<!---  Project Claud By T#eBl@nkPages!   --->
+</div>
+</body>
+</html>
